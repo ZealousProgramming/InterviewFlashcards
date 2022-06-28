@@ -7,6 +7,6 @@
     <br />
     <a href="somedemo.com">View Demo</a>
     ·
-    <a href="https://trello.com">View the Trello Board</a>
+    <a href="https://trello.com/b/F4JULfvW/interviewflashcards">View the Trello Board</a>
 
 </div>

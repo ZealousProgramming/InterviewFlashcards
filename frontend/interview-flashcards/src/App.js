@@ -1,13 +1,15 @@
 import './App.css';
 
-// import { useState } from 'react';
+import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
-import Home from './Pages/Home.js';
-import Quiz from './Pages/Quiz.js';
+import HomePage from './Pages/HomePage.js';
+import QuizPage from './Pages/QuizPage.js';
 import ErrorPage from './Pages/ErrorPage.js';
+import {TopicContext} from "./Contexts/TopicContext";
 
 function App() {
+    const [topicFilter, setTopicFilter] = useState({});
 
     return (
         <Router>
@@ -15,11 +17,13 @@ function App() {
                 <Link to="/"> Home </Link>
                 <Link to="/quiz"> Quiz </Link>
             </nav>
-            <Routes>
-                <Route path="/" element={<Home/>} />
-                <Route path="/quiz" element={<Quiz/>} />
-                <Route path="*" element={<ErrorPage/>} />
-            </Routes>
+            <TopicContext.Provider value={{topicFilter, setTopicFilter}}>
+                <Routes>
+                    <Route path="/" element={<HomePage/>} />
+                    <Route path="/quiz" element={<QuizPage/>} />
+                    <Route path="*" element={<ErrorPage/>} />
+                </Routes>
+            </TopicContext.Provider>
             <div>
                 Footer
             </div>

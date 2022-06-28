@@ -1,9 +1,12 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, ButtonGroup } from "react-bootstrap";
 
-function Home() {
+import { TopicContext } from "../Contexts/TopicContext";
+
+function HomePage() {
     let beginNavigate = useNavigate();
+    const { setTopicFilter } = useContext(TopicContext);
     const [ topicStates, setTopicsState ] = useState({
         javaScript: false,
         react: false,
@@ -35,10 +38,11 @@ function Home() {
 
             </ButtonGroup>
             <button onClick={() => {
+                setTopicFilter(topicStates);
                 beginNavigate("/quiz");
             }}>Begin</button>
         </>
     );
 }
 
-export default Home;
+export default HomePage;
