@@ -2,7 +2,7 @@ import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, ButtonGroup } from "react-bootstrap";
 
-import { TopicContext } from "../Contexts/TopicContext";
+import { TopicContext } from "../contexts/TopicContext";
 
 function HomePage() {
     let beginNavigate = useNavigate();

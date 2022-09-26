@@ -3,10 +3,10 @@ import './App.css';
 import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
-import HomePage from './Pages/HomePage.js';
-import QuizPage from './Pages/QuizPage.js';
-import ErrorPage from './Pages/ErrorPage.js';
-import {TopicContext} from "./Contexts/TopicContext";
+import HomePage from './pages/HomePage.js';
+import QuizPage from './pages/QuizPage.js';
+import ErrorPage from './pages/ErrorPage.js';
+import {TopicContext} from "./contexts/TopicContext";
 
 function App() {
     const [topicFilter, setTopicFilter] = useState({});
